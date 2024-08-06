@@ -1,0 +1,43 @@
+.main {
+    width: 100vw;
+    height: 160px;
+    display: flex;
+    border: 2px solid black;
+    border-radius: 6px;
+    align-items: center;
+    padding: 4px;
+    gap: 10px;
+}
+
+img {
+    height: 150px;
+    width: auto;
+}
+
+.details{
+    margin-bottom: 18px;
+    display: flex;
+    flex-direction: column;
+    line-height: 0px;
+}
+
+p {
+    font-size: 12px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+h5 {
+    font-size: 20px;
+}
+
+button {
+    height: 30px;
+    width: 100px;
+    border-radius: 6px;
+    background-color: orange;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 24px;
+}
