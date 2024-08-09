@@ -8,7 +8,7 @@
 
 // export default CompA;
 import React, { createContext } from "react";
-import CompD from "./CompD";
+import CompB from "./CompB";
 
 const Context1 = createContext();
 const Context2 = createContext();
@@ -19,7 +19,7 @@ const CompA = () => {
   return (
     <Context1.Provider value={text1}>
       <Context2.Provider value={text2}>
-        <CompD></CompD>
+        <CompB></CompB>
       </Context2.Provider>
     </Context1.Provider>
   );

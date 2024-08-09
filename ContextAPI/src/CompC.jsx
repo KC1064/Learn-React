@@ -10,10 +10,13 @@
 // export default CompC
 
 import React from 'react'
+import CompD from './CompD'
 
 const CompC = () => {
   return (
-    <div>CompC</div>
+    <div>
+      <CompD></CompD>
+    </div>
   )
 }
 
