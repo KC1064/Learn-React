@@ -4,26 +4,26 @@ import useFetch from "./UseFetch";
 
 const Fetch = () => {
   const [users] = useFetch();
-  const [showCanvas, setShowCanvas] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
 
   const handleButtonClick = () => {
-    setShowCanvas(true);
+    setIsVisible(!isVisible);
   };
 
   return (
     <div className="container">
-      <button className="get" onClick={handleButtonClick}>Get Users</button>
-      {showCanvas && (
-        <div className="canvas">
-          {users.map((user) => {
-            return (
-              <div className="main" key={user.id}>
-                <a href={user.html_url}>{user.login}</a>
-              </div>
-            );
-          })}
-        </div>
-      )}
+      <button className="get" onClick={handleButtonClick}>
+        {isVisible ? "Hide Users" : "Get Users"}
+      </button>
+      <div className="canvas" style={{ display: isVisible ? "block" : "none" }}>
+        {users.map((user) => {
+          return (
+            <div className="main" key={user.id}>
+              <a href={user.html_url}>{user.login}</a>
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 };
