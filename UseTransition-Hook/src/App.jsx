@@ -6,14 +6,14 @@ const App = () => {
 
   const [isPending, setTransition] = useTransition();
 
-  const LIST_SIZE = 10000;
+  const LIST_SIZE = 50000;
 
   const handleInputChange = (e) => {
     const { value } = e.target;
     setInput(value);
 
-    const datalist = [];
     setTransition(() => {
+      const datalist = [];
       for (let i = 0; i < LIST_SIZE; i++) {
         datalist.push(value);
       }
@@ -24,11 +24,16 @@ const App = () => {
   return (
     <div>
       <input type="text" value={input} onChange={handleInputChange} />
-      {lists.map((lists, index) => {
-        return <p key={index}>{lists}</p>;
-      })}
+      {
+        isPending ? (
+          <div>Loading</div>
+        ) : (
+          lists.map((list, index) => {
+            return <p key={index}>{list}</p>;
+          })
+        )
+      }
     </div>
-  );
+  ); 
 };
-
 export default App;
